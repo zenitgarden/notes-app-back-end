@@ -16,7 +16,7 @@ const notes = [
     updatedAt: '2022-11-13T14:02:28.321Z',
   },
   {
-    title: 'Hayooohhh Ngapainnn itu',
+    title: 'Zegenigit (G Language)',
     tags: ['Meeting'],
     body: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat porro sint fugiat inventore praesentium voluptatem, architecto ut officiis animi, saepe, numquam reiciendis assumenda doloribus sequi velit commodi fugit incidunt? Autem consectetur possimus porro, magnam, ',
     id: 'nsijdlkIRIdsfoji',

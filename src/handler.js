@@ -42,8 +42,8 @@ const getAllNotesHandler = (request, h) => {
     const response = h.response({
       status: 'success',
       data: {
-        notes: notes.filter((note) => note.title.toLowerCase().indexOf(title) > -1
-        || note.body.toLowerCase().indexOf(title) > -1),
+        notes: notes.filter((note) => note.title.toLowerCase().indexOf(title.toLowerCase()) > -1
+        || note.body.toLowerCase().indexOf(title.toLowerCase()) > -1),
       },
     });
     response.code(200);
