@@ -5,6 +5,9 @@ const {
   editNoteByIdHandler,
   deleteNoteByIdHandler,
   getTagsHandler,
+  getGempaTerkini,
+  getAutoGempa,
+  getGempaDirasakan,
 } = require('./handler');
 
 const routes = [
@@ -37,6 +40,21 @@ const routes = [
     method: 'GET',
     path: '/tags',
     handler: getTagsHandler,
+  },
+  {
+    method: 'GET',
+    path: '/gempaterkini',
+    handler: getGempaTerkini,
+  },
+  {
+    method: 'GET',
+    path: '/autogempa',
+    handler: getAutoGempa,
+  },
+  {
+    method: 'GET',
+    path: '/gempadirasakan',
+    handler: getGempaDirasakan,
   },
 ];
 

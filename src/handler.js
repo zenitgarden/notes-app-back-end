@@ -1,3 +1,6 @@
+const fetch = require('node-fetch');
+
+globalThis.fetch = fetch;
 const { nanoid } = require('nanoid');
 const notes = require('./notes');
 const noteTags = require('./tags');
@@ -143,6 +146,28 @@ const deleteNoteByIdHandler = (request, h) => {
   return response;
 };
 
+// Get data gempa dari BMKG
+const getGempaTerkini = async () => {
+  const req = await fetch('https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json');
+  if (!req.ok) return { status: 'error', message: 'internal server error' };
+  const res = await req.json();
+  return res;
+};
+
+const getAutoGempa = async () => {
+  const req = await fetch('https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json');
+  if (!req.ok) return { status: 'error', message: 'internal server error' };
+  const res = await req.json();
+  return res;
+};
+
+const getGempaDirasakan = async () => {
+  const req = await fetch('https://data.bmkg.go.id/DataMKG/TEWS/gempadirasakan.json');
+  if (!req.ok) return { status: 'error', message: 'internal server error' };
+  const res = await req.json();
+  return res;
+};
+
 module.exports = {
   addNoteHandler,
   getAllNotesHandler,
@@ -150,4 +175,7 @@ module.exports = {
   editNoteByIdHandler,
   deleteNoteByIdHandler,
   getTagsHandler,
+  getGempaTerkini,
+  getGempaDirasakan,
+  getAutoGempa,
 };
